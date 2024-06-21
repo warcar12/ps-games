@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.game-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    display: block;
+    margin: 10px;
+    width: 100px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+iframe {
+    display: none;
+    width: 600px;
+    height: 450px;
+    border: none;
+    margin-top: 20px;
+}
+</style>
+<body>
+    <div class="game-buttons">
+        <button onclick="startGame('resident-evil-3')">Resident Evil 3</button>
+        <button onclick="startGame('gta')">GTA</button>
+        <button onclick="startGame('gta2')">GTA2</button>
+        <button onclick="startGame('tekken')">Tekken</button>
+        <button onclick="startGame('tekken2')">Tekken2</button>
+        <button onclick="startGame('tekken3')">Tekken3</button>
+    </div>
+    <iframe id="resident-evil-3" src="https://www.retrogames.cc/embed/42155-resident-evil-3-nemesis-u.html" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+    <iframe id="gta" src="https://www.retrogames.cc/embed/41827-grand-theft-auto.html" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+    <iframe id="gta2" src="https://www.retrogames.cc/embed/41828-grand-theft-auto-2.html" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+    <iframe id="tekken" src="https://www.retrogames.cc/embed/41513-tekken.html" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+    <iframe id="tekken2" src="https://www.retrogames.cc/embed/41514-tekken-2.html" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+    <iframe id="tekken3" src="https://www.retrogames.cc/embed/41515-tekken-3.html" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+    <script>
+    function startGame(game) {
+        const iframes = document.querySelectorAll('iframe');
+        iframes.forEach(iframe => iframe.style.display = 'none');
+        
+        const selectedIframe = document.getElementById(game);
+        if (selectedIframe) {
+            selectedIframe.style.display = 'block';
+        } else {
+            alert('Game not available');
+        }
+    }
+    </script>
+</body>
+</html>
